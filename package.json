@@ -1,0 +1,27 @@
+{
+    "name": "emerald-isle",
+    "version": "0.0.1",
+    "description": "Make link text of open page.",
+    "main": "dist/chain.js",
+    "scripts": {
+        "webpack": "webpack",
+        "start": "webpack",
+        "restart": "webpack"
+    },
+    "author": "Arm Band",
+    "license": "ISC",
+    "dependencies": {
+        "markdown-function": "^1.1.1"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^4.0.0",
+        "terser-webpack-plugin": "^5.3.0",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=6.14.9"
+    },
+    "engineStrict": true
+}
