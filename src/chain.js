@@ -58,10 +58,6 @@ const brianBoru_s_March = () => {
         });
     });
     chrome.contextMenus.onClicked.addListener(function(item){
-//console.log(`chrome.contextMenus.onClicked, brianBoru_s_March`);
-//console.log(item);
-//console.log(item.menuItemId);
-//console.log(chrome.tabs);
         chrome.tabs.getSelected((tab) => {
             // 現在のタブ
             let clipText = '';
@@ -79,19 +75,7 @@ const brianBoru_s_March = () => {
                 default:
                     break;
             }
-//            console.log(`clipText: ${clipText}`);
-//            console.log(chrome.clipboard);
-//            navigator.clipboard.writeText(clipText);
             chrome.tabs.sendMessage(tab.id, clipText, function(response) {
-                // background script (というより event script) で navigator.clipboard にアクセスしようとすると
-                // Uncaught (in promise) DOMException: Document is not focused.
-                // のエラーになってしまう
-                // しかし、
-                // const doc = document.querySelector('document');
-                // doc.focus();
-                // とすると、
-                // background script (というより event script) の document を拾うのでエラーになる
-                // そこで、 chrome.tabs.sendMessage で Context Scripts にいったんテキストを送り込んで、 Context Script 内でクリップボードへの書き込みを行うようにする
                 console.log(response.value);
             });
         });
