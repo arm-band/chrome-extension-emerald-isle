@@ -75,8 +75,14 @@ const brianBoru_s_March = () => {
                 default:
                     break;
             }
-            chrome.tabs.sendMessage(tab.id, clipText, function(response) {
-                console.log(response.value);
+            chrome.tabs.sendMessage(
+                tab.id,
+                {
+                    text: clipText,
+                    url: tab.url,
+                },
+                function(response) {
+                    console.log(response.value);
             });
         });
     });

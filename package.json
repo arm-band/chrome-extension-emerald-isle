@@ -1,6 +1,6 @@
 {
     "name": "emerald-isle",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Make link text of open page.",
     "main": "dist/chain.js",
     "scripts": {
